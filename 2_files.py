@@ -18,12 +18,9 @@ def main():
     print(len(content))
     print(len(content.split()))
 
-    new_content = content.replace(content, ("!".join(content.split('.'))))
-    print(new_content)
-
     filename = 'referat2.txt'
     with open(filename, 'w', encoding='utf-8') as f:
-        f.write(new_content)
+        f.write(content.replace('.', '!'))
         
 if __name__ == "__main__":
     main()
