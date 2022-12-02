@@ -15,23 +15,15 @@ def main():
     with open('referat.txt', 'r', encoding='utf-8') as f:
         content = f.read()
 
-    str_len = len(content)
-    print(str_len)
-
+    print(len(content))
     print(len(content.split()))
 
-    x = ''
-    for i in content:
-        if i not in ('.','?'):
-            x += i
-        else:
-            print((x+i).strip().replace('.','!'))
-            x = ''
+    new_content = content.replace(content, ("!".join(content.split('.'))))
+    print(new_content)
 
     filename = 'referat2.txt'
     with open(filename, 'w', encoding='utf-8') as f:
-        f.write(content)
+        f.write(new_content)
         
-
 if __name__ == "__main__":
     main()
